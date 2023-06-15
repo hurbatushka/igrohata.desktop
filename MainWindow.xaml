@@ -19,7 +19,7 @@
                 <Label FontSize="15" HorizontalAlignment="Center" FontFamily="Century Gothic">Введите ваши данные для входа</Label>
                 <TextBox FontFamily="Century Gothic" FontSize="15" x:Name="textbox1" Width="250" Height="50" materialDesign:HintAssist.Hint="Логин" materialDesign:HintAssist.IsFloating="True"></TextBox>
                 <TextBox FontFamily="Century Gothic" FontSize="15" x:Name="textbox2" Width="250" Height="50" materialDesign:HintAssist.Hint="Пароль" materialDesign:HintAssist.IsFloating="True" Cursor=""></TextBox>
-                <CheckBox Padding="8" FontSize="12" HorizontalAlignment="Center" FontFamily="Century Gothic" Width="255">Запомини меня!</CheckBox>
+                <CheckBox Padding="9" FontSize="12" HorizontalAlignment="Center" FontFamily="Century Gothic" Width="255">Запомини меня!</CheckBox>
                 <Button FontFamily="Century Gothic" HorizontalAlignment="Center" Margin="10" Click="Button_Click_2" Width="250" Cursor="Hand">Войти</Button>
                 <Button FontFamily="Century Gothic" HorizontalAlignment="Center" Click="Button_Click_1" Width="250" Cursor="Hand">Выход</Button>
                 <Label FontFamily="Century Gothic" x:Name="lblVersion" FontSize="15" Cursor=""></Label>
