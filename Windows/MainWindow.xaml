@@ -5,13 +5,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
-        mc:Ignorable="d" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent" ResizeMode="NoResize" Icon="/logo2.ico">
+        mc:Ignorable="d" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent" ResizeMode="NoResize" Icon="/Icons/logo2.ico">
     <Grid>
-        <Image>
-            <Image.Source>
-                <BitmapImage UriSource="http://example.com/image.jpg" />
-            </Image.Source>
-        </Image>
+       
         <Border Background="White" VerticalAlignment="Center" MaxWidth="500" MaxHeight="500" CornerRadius="5" Margin="15" Padding="30" MouseLeftButtonDown="Border_MouseLeftButtonDown">
             <StackPanel>
 
