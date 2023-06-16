@@ -5,9 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Window2" Height="450" Width="800">
+        Title="#ИГРОХАТА" Height="550" Width="950" Closing="Window_Closing">
     <Grid>
-        <Label x:Name="label1" FontSize="25" Content="Label" HorizontalAlignment="Left" Height="50" Margin="197,134,0,0" VerticalAlignment="Top" Width="326"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
+        <!-- Бургер-меню -->
+        <Border x:Name="BurgerMenu" Grid.Column="0" Background="#212121" Width="230" Cursor="">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                <Button Background="Transparent" Margin="5" x:Name="ToggleBtn" BorderThickness="0" Content="☰" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Right" Click="ToggleBtn_Click" Cursor="Hand"/>
+                <Button Margin="5" x:Name="BookingBtn" BorderThickness="0" Content="Бронирование" FontSize="14" HorizontalAlignment="Stretch" VerticalAlignment="Center" Click="BookingBtn_Click" />
+                <Button Margin="5" x:Name="VipBtn" BorderThickness="0" Content="VIP" FontSize="14" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+                <Button Margin="5" x:Name="ControlCashBtn" BorderThickness="0" Content="Контроль выручки" FontSize="14" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+                <Button Margin="5" BorderThickness="0" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Stretch" Cursor="Hand">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                        <Image Margin="5 0 5 0" Source="/Icons/logo2.ico" HorizontalAlignment="Left"/>
+                        <TextBlock Text="Игровой зал" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Label Margin="0 15 0 0" x:Name="label1" FontSize="14" Content="Добро пожаловать: userName" Foreground="White" Cursor=""/>
+            </StackPanel>
+        </Border>
+        <Label Margin="0 0 5 0" x:Name="versionLbl" FontSize="15" Content="0.0.0" Foreground="White" Cursor="" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+
+        <Border Grid.Column="1" Background="White">
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+        </Border>
     </Grid>
 </Window>
