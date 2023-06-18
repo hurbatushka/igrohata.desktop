@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="#ИГРОХАТА" Height="550" Width="950" Closing="Window_Closing">
+        Title="#ИГРОХАТА" Height="550" Width="950" Closing="Window_Closing"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -28,10 +29,10 @@
                 <Label Margin="0 15 0 0" x:Name="label1" FontSize="14" Content="Добро пожаловать: userName" Foreground="White" Cursor=""/>
             </StackPanel>
         </Border>
-        <Label Margin="0 0 5 0" x:Name="versionLbl" FontSize="15" Content="0.0.0" Foreground="White" Cursor="" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        <Label Margin="0 0 5 0" x:Name="versionLbl" FontSize="10" Content="0.0.0" Foreground="White" Cursor="" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
 
         <Border Grid.Column="1" Background="White">
-            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
         </Border>
     </Grid>
 </Window>
