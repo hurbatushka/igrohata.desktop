@@ -22,15 +22,31 @@ namespace WpfApp1
         public Window2()
         {
             InitializeComponent();
-            BurgerMenu.Width = Igrohata.app.Settings.Default.BurgerMenu;
             Application.Current.Properties["name"] = "Admin";
             versionLbl.Content = Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
             label1.Content = $"Добро пожаловать: {(string)Application.Current.Properties["name"]}";
+            updateUIMenu();
         }
 
         private void BookingBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Booking());
+            if (!(MainFrame.Content is Booking))
+            {
+                MainFrame.Navigate(new Booking());
+            }
+
+        }
+
+        void updateUIMenu()
+        {
+            BurgerMenu.Width = Igrohata.app.Settings.Default.BurgerMenu;
+            if (BurgerMenu.Width != 230)
+            {
+                BookingBtn.Content = "Бронь";
+                VipBtn.Content = "VIP";
+                GameBtn.Content = "Игры";
+                label1.Content = $"{(string)Application.Current.Properties["name"]}";
+            }
         }
 
         private void ToggleBtn_Click(object sender, RoutedEventArgs e)
@@ -38,14 +54,22 @@ namespace WpfApp1
             if (BurgerMenu.Width == 230)
             {
                 // Сворачиваем бургер-меню
-                DoubleAnimation animation = new DoubleAnimation(55, new Duration(TimeSpan.FromSeconds(0.3)));
+                DoubleAnimation animation = new DoubleAnimation(85, new Duration(TimeSpan.FromSeconds(0.3)));
                 BurgerMenu.BeginAnimation(WidthProperty, animation);
+                BookingBtn.Content = "Бронь";
+                VipBtn.Content = "VIP";
+                GameBtn.Content = "Игры";
+                label1.Content = $"{(string)Application.Current.Properties["name"]}";
             }
             else
             {
                 // Разворачиваем бургер-меню
                 DoubleAnimation animation = new DoubleAnimation(230, new Duration(TimeSpan.FromSeconds(0.3)));
                 BurgerMenu.BeginAnimation(WidthProperty, animation);
+                BookingBtn.Content = "Бронирование";
+                VipBtn.Content = "VIP клиенты";
+                GameBtn.Content = "База игр";
+                label1.Content = $"Добро пожаловать: {(string)Application.Current.Properties["name"]}";
             }
         }
 
